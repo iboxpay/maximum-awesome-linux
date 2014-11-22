@@ -48,33 +48,33 @@ namespace :install do
 
   desc 'Apt-get Update'
   task :update do
-    step 'apt-get update'
-    sh 'sudo apt-get update'
+    step 'yum update'
+    sh 'sudo yum update'
   end
 
   desc 'Install Vim'
   task :vim do
     step 'vim'
-    sh 'sudo apt-get install vim'
+    sh 'sudo yum install vim'
   end
 
   desc 'Install tmux'
   task :tmux do
     step 'tmux'
-    sh 'sudo apt-get install tmux'
+    sh 'sudo yum install tmux'
   end
 
   desc 'Install ctags'
   task :ctags do
     step 'ctags'
-    sh 'sudo apt-get install ctags'
+    sh 'sudo yum install ctags'
   end
 
   # https://github.com/ggreer/the_silver_searcher
   desc 'Install The Silver Searcher'
   task :the_silver_searcher do
     step 'the_silver_searcher'
-    sh 'sudo apt-get install build-essential automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev'
+    sh 'sudo yum -y install pkgconfig automake gcc zlib-devel pcre-devel xz-devel'
     sh 'git clone https://github.com/ggreer/the_silver_searcher.git'
     Dir.chdir 'the_silver_searcher' do
       sh './build.sh'
@@ -105,7 +105,7 @@ end
 
 desc 'Install these config files.'
 task :default do
-  Rake::Task['install:update'].invoke
+  #Rake::Task['install:update'].invoke
   Rake::Task['install:vim'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:ctags'].invoke
