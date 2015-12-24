@@ -4,10 +4,11 @@
 Linux (modify for Fedora) port of Maximum Awesome from (https://github.com/square/maximum-awesome).
 
 ## What do you need to do it
-Ubuntu, with `git` and `rake` installed. To get them you could do
+Fedora, with `git` and `rake` installed. To get them you could do
 
 ```bash
-sudo apt-get install git rake
+sudo yum install git gem
+sudo gem install rake
 ```
 
 ## What's in it?

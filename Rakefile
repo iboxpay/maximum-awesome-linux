@@ -55,19 +55,19 @@ namespace :install do
   desc 'Install Vim'
   task :vim do
     step 'vim'
-    sh 'sudo yum install vim'
+    sh 'sudo yum -y install vim'
   end
 
   desc 'Install tmux'
   task :tmux do
     step 'tmux'
-    sh 'sudo yum install tmux'
+    sh 'sudo yum -y install tmux'
   end
 
   desc 'Install ctags'
   task :ctags do
     step 'ctags'
-    sh 'sudo yum install ctags'
+    sh 'sudo yum -y install ctags'
   end
 
   # https://github.com/ggreer/the_silver_searcher
